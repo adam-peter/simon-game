@@ -22,11 +22,13 @@ $(document).keydown(function (e) {
 
 var userColor;
 $(".btn").click(function(e){
-  userColor = e.target.id;
-  userPattern.push(userColor);
-  if (!checkAnswer(index++)){
-    pressAnimation(userColor);
-    playSound(userColor);
+  if (started){
+    userColor = e.target.id;
+    userPattern.push(userColor);
+    if (!checkAnswer(index++)){
+      pressAnimation(userColor);
+      playSound(userColor);
+    }
   }
 });
 
